@@ -1,8 +1,9 @@
-package org.saltations;
+package org.saltations.horae;
 
 import io.micronaut.runtime.Micronaut;
 import io.swagger.v3.oas.annotations.*;
 import io.swagger.v3.oas.annotations.info.*;
+import lombok.extern.slf4j.Slf4j;
 
 @OpenAPIDefinition(
     info = @Info(

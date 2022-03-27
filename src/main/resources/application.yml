@@ -2,6 +2,7 @@ micronaut:
   application:
     name: horae
   security:
+    enabled: true
     authentication: bearer
     token:
       jwt:
@@ -23,6 +24,8 @@ micronaut:
       pattern: /health/**
     - access: isAnonymous()
       pattern: /info/**
+    - access: isAnonymous()
+      pattern: /login/**
 
   router:
     static-resources:
@@ -46,6 +49,11 @@ micronaut:
 
 #neo4j.uri: bolt://${NEO4J_HOST:localhost}
 
+  server:
+    http-version: 2.0
+    ssl:
+      enabled: true
+
 netty:
   default:
     allocator:
@@ -65,3 +73,9 @@ endpoints:
       enabled: true
     git:
       enabled: false
+  login:
+    enabled: true
+    sensitive: false
+  routes:
+    enabled: true
+

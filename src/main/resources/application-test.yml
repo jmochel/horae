@@ -1,0 +1,10 @@
+micronaut:
+  server:
+    http-version: 2.0
+    ssl:
+      enabled: true
+      buildSelfSigned: true
+  http:
+    client:
+      ssl:
+        insecure-trust-all-certificates: true

@@ -1,6 +1,6 @@
-package org.saltations;
+package org.saltations.horae;
 
-import io.micronaut.http.HttpRequest;
+import io.micronaut.http.MediaType;
 import io.micronaut.http.client.HttpClient;
 import io.micronaut.http.client.annotation.Client;
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
@@ -11,25 +11,22 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
-/**
- * This test answers the following questions about XXX_SUT
- * <ol>
- *  <li>XXX ?</li>
- *  <li>XXX ?</li>
- * </ol>
- * It does not test ...
- */
+import static io.micronaut.http.HttpRequest.GET;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @MicronautTest
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-@DisplayName("Application Health Test")
-public class ApplicationHealthTest
+@DisplayName("Application Authentication Test")
+public class ApplicationBasicTest
 {
+    @Inject
+    private AuthenticationFixture loginFixture;
+
     @Inject
     @Client("/")
     private HttpClient client;
+
 
 //    Title: Returns and exchanges go to inventory.
 //
@@ -44,34 +41,18 @@ public class ApplicationHealthTest
 //    _then_ I should have four black sweaters in inventory.
 //
 
-    /**
-     * Any rationale notes that are not covered by the scenario
-     */
-
     @Test
     @Order(2)
-    @DisplayName("Give XXX and YYY, when ZZZ then AAA")
-    void applicationIsHealthy()
+    @DisplayName("Can get the exposed routes")
+    void canGetTheRoutes()
     {
-        var result = client.toBlocking().retrieve(HttpRequest.GET("/health"));
-        assertTrue(result != null);
-        assertTrue(result.contains("UP"));
-    }
+        var req = GET("/routes")
+                .accept(MediaType.APPLICATION_JSON)
+                .bearerAuth(loginFixture.adminAccessToken());
 
+        var resp = client.toBlocking().retrieve(req);
 
-
-    @Test
-    @Order(4)
-    @DisplayName("Give XXX and YYY, when ZZZ then AAA")
-    void givenXXXAndYYYWhenZZZThenAAA()
-    {
-        // Arrange
-
-
-        // Act
-
-
-        // Assert
+        assertNotNull(resp);
     }
 
 }

@@ -5,18 +5,18 @@
 #Request-Body
 
 ### Basic Health Check
-GET http://{{host}}:{{port}}/health
+GET https://{{host}}:{{port}}/health
 
 ### Basic Health Check
-GET http://{{host}}:{{port}}/info
+GET https://{{host}}:{{port}}/info
 
 ### Swagger exposed
-GET http://{{host}}:{{port}}/swagger-ui
+GET https://{{host}}:{{port}}/swagger-ui
 
 ### Rapidoc exposed
-GET http://{{host}}:{{port}}/rapidoc
+GET https://{{host}}:{{port}}/rapidoc
 
 ### Redoc exposed
-GET http://{{host}}:{{port}}/redoc
+GET https://{{host}}:{{port}}/redoc
 
 

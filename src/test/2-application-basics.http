@@ -1,0 +1,25 @@
+####
+#Method Request-URI HTTP-Version
+#Header-field: Header-value
+#
+#Request-Body
+
+### Login as Admin to {{host}}
+POST https://{{host}}:{{port}}/login
+Content-Type: application/json
+Authorization:
+
+{
+  "username" : "admin@lw.com",
+  "password" : "12345"
+}
+
+> {% client.global.set("auth_token", response.get.body.access_token); %}
+
+
+### Basic Health Check
+GET https://{{host}}:{{port}}/horae
+
+
+
+
