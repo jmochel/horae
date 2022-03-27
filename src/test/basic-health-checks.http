@@ -1,18 +1,22 @@
-
+####
+#Method Request-URI HTTP-Version
+#Header-field: Header-value
+#
+#Request-Body
 
 ### Basic Health Check
-GET http://localhost:8080/health
+GET http://{{host}}:{{port}}/health
 
 ### Basic Health Check
-GET http://localhost:8080/info
+GET http://{{host}}:{{port}}/info
 
 ### Swagger exposed
-GET http://localhost:8080/swagger-ui
+GET http://{{host}}:{{port}}/swagger-ui
 
 ### Rapidoc exposed
-GET http://localhost:8080/rapidoc
+GET http://{{host}}:{{port}}/rapidoc
 
 ### Redoc exposed
-GET http://localhost:8080/redoc
+GET http://{{host}}:{{port}}/redoc
 
 
