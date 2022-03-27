@@ -16,7 +16,13 @@ micronaut:
     - access: isAnonymous()
       pattern: /swagger-ui/**
     - access: isAnonymous()
+      pattern: /redoc/**
+    - access: isAnonymous()
+      pattern: /rapidoc/**
+    - access: isAnonymous()
       pattern: /health/**
+    - access: isAnonymous()
+      pattern: /info/**
 
   router:
     static-resources:
@@ -26,6 +32,17 @@ micronaut:
       swagger-ui:
         paths: classpath:META-INF/swagger/views/swagger-ui
         mapping: /swagger-ui/**
+      redoc:
+        paths: classpath:META-INF/swagger/views/redoc
+        mapping: /redoc/**
+      rapidoc:
+        paths: classpath:META-INF/swagger/views/rapidoc
+        mapping: /rapidoc/**
+
+  openapi:
+    property:
+      naming:
+        strategy: SNAKE_CASE
 
 #neo4j.uri: bolt://${NEO4J_HOST:localhost}
 
@@ -39,3 +56,12 @@ endpoints:
     enabled: true
     sensitive: false
     details-visible: ANONYMOUS
+  info:
+    enabled: true
+    sensitive: false
+    config:
+      enabled: false
+    build:
+      enabled: true
+    git:
+      enabled: false

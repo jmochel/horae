@@ -2,10 +2,11 @@ plugins {
     id("groovy") 
     id("com.github.johnrengelman.shadow") version "7.1.2"
     id("io.micronaut.application") version "3.3.0"
+    id("com.intershop.gradle.buildinfo") version "6.0.0"
 }
 
 version = "0.1"
-group = "org.saltations"
+group = "org.saltations.horae"
 
 repositories {
     mavenCentral()
@@ -43,7 +44,6 @@ dependencies {
     testRuntimeOnly("org.neo4j.test:neo4j-harness")
 
 }
-
 
 application {
     mainClass.set("org.saltations.Application")

@@ -6,8 +6,11 @@ import io.swagger.v3.oas.annotations.info.*;
 
 @OpenAPIDefinition(
     info = @Info(
-            title = "horae",
-            version = "0.1"
+            title = "Horae",
+            version = "0.1",
+            description = "Horae Service",
+            license = @License(name = "Apache 2.0", url = "https://foo.bar"),
+            contact = @Contact(name = "Jim Mochel", email = "jmochel@saltations.org")
     )
 )
 public class Application

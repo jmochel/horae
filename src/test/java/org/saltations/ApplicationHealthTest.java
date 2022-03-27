@@ -9,7 +9,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestMethodOrder;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -58,6 +57,8 @@ public class ApplicationHealthTest
         assertTrue(result != null);
         assertTrue(result.contains("UP"));
     }
+
+
 
     @Test
     @Order(4)

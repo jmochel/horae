@@ -1,2 +1,18 @@
-###
+
+
+### Basic Health Check
 GET http://localhost:8080/health
+
+### Basic Health Check
+GET http://localhost:8080/info
+
+### Swagger exposed
+GET http://localhost:8080/swagger-ui
+
+### Rapidoc exposed
+GET http://localhost:8080/rapidoc
+
+### Redoc exposed
+GET http://localhost:8080/redoc
+
+
