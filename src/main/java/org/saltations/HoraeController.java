@@ -2,10 +2,11 @@ package org.saltations;
 
 import io.micronaut.http.annotation.*;
 
-@Controller("/horae")
+
+@Controller(value = "/horae")
 public class HoraeController {
 
-    @Get(uri="/", produces="text/plain")
+    @Get(uri="/")
     public String index() {
         return "Example Response";
     }

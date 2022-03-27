@@ -9,11 +9,15 @@ micronaut:
           secret:
             generator:
               secret: '"${JWT_GENERATOR_SIGNATURE_SECRET:pleaseChangeThisSecretForANewOne}"'
+
     intercept-url-map:
     - access: isAnonymous()
       pattern: /swagger/**
     - access: isAnonymous()
       pattern: /swagger-ui/**
+    - access: isAnonymous()
+      pattern: /health/**
+
   router:
     static-resources:
       swagger:
@@ -22,8 +26,16 @@ micronaut:
       swagger-ui:
         paths: classpath:META-INF/swagger/views/swagger-ui
         mapping: /swagger-ui/**
-neo4j.uri: bolt://${NEO4J_HOST:localhost}
+
+#neo4j.uri: bolt://${NEO4J_HOST:localhost}
+
 netty:
   default:
     allocator:
       max-order: 3
+
+endpoints:
+  health:
+    enabled: true
+    sensitive: false
+    details-visible: ANONYMOUS
