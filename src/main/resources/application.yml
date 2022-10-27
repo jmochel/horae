@@ -1,0 +1,23 @@
+micronaut:
+  application:
+    name: horae
+  metrics:
+    export:
+      datadog:
+        enabled: true
+        apiKey: ${DATADOG_APIKEY}
+        step: PT1M
+    enabled: true
+  router:
+    static-resources:
+      swagger:
+        paths: classpath:META-INF/swagger
+        mapping: /swagger/**
+      swagger-ui:
+        paths: classpath:META-INF/swagger/views/swagger-ui
+        mapping: /swagger-ui/**
+netty:
+  default:
+    allocator:
+      max-order: 3
+neo4j.uri: bolt://${NEO4J_HOST:localhost}
