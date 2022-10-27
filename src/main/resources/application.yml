@@ -5,7 +5,7 @@ micronaut:
     export:
       datadog:
         enabled: true
-        apiKey: ${DATADOG_APIKEY}
+        apiKey: ${DATADOG_APIKEY:bogus_key}
         step: PT1M
     enabled: true
   router:
@@ -20,4 +20,6 @@ netty:
   default:
     allocator:
       max-order: 3
-neo4j.uri: bolt://${NEO4J_HOST:localhost}
+
+neo4j:
+  uri: bolt://${NEO4J_HOST:localhost}

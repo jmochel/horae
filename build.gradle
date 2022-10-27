@@ -43,10 +43,10 @@ dependencies {
 
 }
 
-
 application {
-    mainClass.set("org.saltations.Application")
+    mainClass.set("org.saltations.app.Application")
 }
+
 java {
     sourceCompatibility = JavaVersion.toVersion("17")
     targetCompatibility = JavaVersion.toVersion("17")

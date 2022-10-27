@@ -1,4 +1,4 @@
-package org.saltations;
+package org.saltations.app;
 
 import io.micronaut.runtime.Micronaut;
 import io.swagger.v3.oas.annotations.*;
