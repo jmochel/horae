@@ -1,4 +1,4 @@
-name: Java CI with Gradle (Groovy)
+name: Horae CI with Gradle/Java/Groovy
 
 on:
   push:
