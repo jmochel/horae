@@ -21,5 +21,10 @@ netty:
     allocator:
       max-order: 3
 
+endpoints:
+  info:
+    enabled: true
+    sensitive: false
+
 neo4j:
   uri: bolt://${NEO4J_HOST:localhost}
